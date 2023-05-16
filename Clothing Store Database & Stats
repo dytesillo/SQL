@@ -1,0 +1,30 @@
+CREATE TABLE store (id INTEGER PRIMARY KEY, item TEXT, section TEXT, price INTEGER, popularity INTEGER);
+
+INSERT INTO store VALUES (1,"shirts", "clothes", 14.99, 50);
+INSERT INTO store VALUES (2, "jeans", "clothes", 19.99, 65);
+INSERT INTO store VALUES (3, "leggings", "clothes", 16.99, 80);
+INSERT INTO store VALUES (4, "socks", "clothes", 5.99, 40);
+INSERT INTO store VALUES (5, "back packs", "accessories", 22.99, 70);
+INSERT INTO store VALUES (6, "shoes", "clothes", 10.99, 65);
+INSERT INTO store VALUES (7, "themed stick notes", "stationary", 4.99, 22);
+INSERT INTO store VALUES (8, "themed pens", "stationary", 1.99, 15);
+INSERT INTO store VALUES (9, "shorts", "clothes", 15.99, 55);
+INSERT INTO store VALUES (10, "duffle bag", "accessories", 21.99, 80);
+INSERT INTO store VALUES (11, "themed diaries", "stationary", 10.99, 45);
+INSERT INTO store VALUES ( 12, "candy", "snacks", 3.99, 30);
+INSERT INTO store VALUES (13, "lipgloss", "makeup", 2.99, 35);
+INSERT INTO store VALUES (14, "perfume", "makeup", 15.99, 62);
+INSERT INTO store VALUES (15, "false lashes", "makeup", 6.99, 78);
+
+--display the data base ordered by price.
+SELECT * FROM store
+ORDER BY price desc;
+
+--what are the 5 most popular items?
+SELECT item, price, popularity FROM store
+ORDER BY popularity DESC limit 5;
+
+--What is the AVG price of items in the makeup section?
+SELECT AVG(PRICE) "makeup item price"
+FROM store 
+WHERE section ='makeup' 
